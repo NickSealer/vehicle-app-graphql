@@ -1,6 +1,7 @@
 import React from 'react'
 import { Details } from './Details'
 import { Delete } from './Delete'
+import { Update } from './Update'
 
 export const Table = ({cars}) => {
   return (
@@ -32,7 +33,7 @@ export const Table = ({cars}) => {
                     <td>{car.category}</td>
                     <td className='actions'>
                       <Details car={car} />
-                      <button className='btn btn-outline-warning'>Update</button>
+                      <Update car={car}/>
                       <Delete car={car} rowId={`delete_${car.id}`}/>
                     </td>
                   </tr>
