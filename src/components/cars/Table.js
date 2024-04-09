@@ -1,6 +1,6 @@
 import React from 'react'
-import { Pagination } from '../Pagination'
 import { Details } from './Details'
+import { Delete } from './Delete'
 
 export const Table = ({cars}) => {
   return (
@@ -23,7 +23,7 @@ export const Table = ({cars}) => {
             {
               cars.map((car) => {
                 return (
-                  <tr key={car.id}>
+                  <tr key={car.id} id={`delete_${car.id}`}>
                     <td>{car.brand}</td>
                     <td>{car.model}</td>
                     <td>{car.color}</td>
@@ -33,7 +33,7 @@ export const Table = ({cars}) => {
                     <td className='actions'>
                       <Details car={car} />
                       <button className='btn btn-outline-warning'>Update</button>
-                      <button className='btn btn-outline-danger'>Delete</button>
+                      <Delete car={car} rowId={`delete_${car.id}`}/>
                     </td>
                   </tr>
                 )
