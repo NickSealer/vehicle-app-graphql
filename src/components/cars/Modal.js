@@ -7,11 +7,13 @@ export const Modal = ({car, action, handleAction, refs}) => {
 
     if (action === 'put') {
       properties.car = car
+      properties.class = 'btn btn-outline-warning'
       properties.title = `${car.brand} - ${car.model}`
       properties.id = `put-${car.id}`
       properties.text = 'Update'
     } else {
       properties.car = {}
+      properties.class = 'btn btn-outline-success'
       properties.title = 'Create new Car'
       properties.id = 'create-new-car'
       properties.text = 'Create New Car'
@@ -23,7 +25,7 @@ export const Modal = ({car, action, handleAction, refs}) => {
 
   return (
     <div>
-      <button type='button' className='btn btn-outline-warning' data-bs-toggle='modal' data-bs-target={`#${properties.id}`}>
+      <button type='button' className={properties.class} data-bs-toggle='modal' data-bs-target={`#${properties.id}`}>
         {properties.text}
       </button>
 
